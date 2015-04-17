@@ -1,3 +1,43 @@
 <div class="container main-content">
 	<%= render partial:"admin/nav"%>
+	<br>
+	<br>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>类目名</th>
+				<th>测试题</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @videos.each do |video|%>
+				<tr>
+					<th>	
+						<%= video.title %><br><br>
+						<%= link_to "新增测试题", new_video_test_path(video) , class:"btn btn-primary"%>
+					</th>
+					<td style="padding:0;">
+						<table class="table table-condensed table-bordered" style="margin:0;">
+							<tbody>
+								<% video.tests.each do |test| %>
+								<tr>
+									<td><%= test.problem %></td>
+									<td><%= test.option_a %></td>
+									<td><%= test.option_b %></td>
+									<td><%= test.option_c %></td>
+									<td><%= test.option_d %></td>
+									<td><%= test.answer %></td>
+									<td><%= test.score %></td>
+									<td><%= video.teacher %></td>
+									<td><%= link_to "编辑", [:edit, test.video, test], class:"btn btn-warning" %></td>
+									<td><%= link_to "删除", [test.video, test], method: :delete, data: {confirm: "Are you sure?"} , class:"btn btn-danger"%></td>
+								</tr>
+								<% end %>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+			<% end %>
+		</tbody>
+	</table>
 </div>

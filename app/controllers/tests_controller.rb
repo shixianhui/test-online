@@ -1,6 +1,11 @@
 class TestsController < ApplicationController
 	def index
-		@tests = Test.all
+		@tests = Test.where("video_id = ?", params[:video_id])
+		if @tests.exists?
+			@title = @tests.first.video.title
+		else
+			redirect_to videos_path
+		end
 	end
 
 	def new
@@ -11,7 +16,7 @@ class TestsController < ApplicationController
 	def create
 		@video = Video.find(params[:video_id])
 		if @test = @video.tests.create(test_params)
-			redirect_to @test
+			redirect_to admin_test_path
 		else
 			render 'new'
 		end
@@ -20,6 +25,28 @@ class TestsController < ApplicationController
 	def show
 		@video = Video.find(params[:video_id])
 		@test = @video.tests.find(params[:id])
+	end
+
+	def edit
+		@video = Video.find(params[:video_id])
+		@test = @video.tests.find(params[:id])
+	end
+
+	def update
+		@video = Video.find(params[:video_id])
+		@test = @video.tests.find(params[:id])
+		if @test.update(test_params)
+			redirect_to admin_test_path
+		else
+			redirect_to admin_test_path
+		end
+	end
+
+	def destroy
+		@video = Video.find(params[:video_id])
+		@test = @video.tests.find(params[:id])
+		@test.destroy
+		redirect_to admin_test_path
 	end
 
 private

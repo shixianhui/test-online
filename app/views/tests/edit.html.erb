@@ -1,6 +1,6 @@
 <div class="container main-content">
 	<h2>new test</h2>
-<%= form_for([@video, @video.tests.build]) do |f| %>
+<%= form_for([@test.video, @test]) do |f| %>
 	<p>
 		<%= f.label :problem %><br>
 		<%= f.text_area :problem %>
@@ -34,3 +34,4 @@
 	</p>
 <% end %>
 </div>
+<%= link_to "返回", admin_test_path %>

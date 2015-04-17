@@ -2,7 +2,7 @@
 <div class="test-bg vbox">
 	<div class="flex"></div>
 	<div class="test-title text-center">
-		<h1>网络设备维护基础（一）测试</h1>
+		<h1><%= @title %></h1>
 		<h4>单选题（不计时）</h4>
 	</div>	
 	<div class="flex"></div>
@@ -24,27 +24,34 @@
 	<div class="list-body">
 		<% @tests.each do |test|%>
 			<p class="test-problem">&nbsp;&nbsp;第<%= test.id %>题：<%= test.problem %></p>
-
 				<div class="radio">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
 						<%= test.option_a %>
 					</label>
+				</div>
+				<div class="radio">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
 						<%= test.option_b %>
 					</label>
+				</div>
+				<div class="radio">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
 						<%= test.option_c %>
 					</label>
+				</div>
+				<div class="radio">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
 						<%= test.option_d %>
 					</label>
 				</div>
-
 			<% end %>
 		<div class="text-center">
 			<!-- <button type="submit" class="btn btn-info btn-sign">提交</button> -->

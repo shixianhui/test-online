@@ -5,7 +5,7 @@ class UsersController < ApplicationController
 
 	def create
 		if @user = User.exists?(user_params)
-			redirect_to courses_path
+			redirect_to videos_path
 		else
 			redirect_to new_user_path
 		end
