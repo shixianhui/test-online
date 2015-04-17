@@ -26,7 +26,7 @@ class VideosController < ApplicationController
 		@course = Course.find(params[:course_id])
 		@video = @course.videos.find(params[:id])
 		@video.destroy
-		redirect_to course_path(@course)
+		redirect_to admin_video_path
 	end
 
 	def edit
@@ -46,6 +46,6 @@ class VideosController < ApplicationController
 
 	private
 		def video_params
-			params.require(:video).permit(:title, :introduce, :teacher, :poster, :video)
+			params.require(:video).permit(:title, :teacher)
 		end
 end

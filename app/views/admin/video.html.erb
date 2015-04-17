@@ -6,7 +6,7 @@
 		<thead>
 			<tr>
 				<th>课程名</th>
-				<th>视频</th>
+				<th>类目</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -14,7 +14,7 @@
 				<tr>
 					<th>
 						《<%= course.title %>》<br><br>
-						<%= link_to "新增视频", course_path(course), class:"btn btn-primary"%>
+						<%= link_to "新增类目", course_path(course), class:"btn btn-primary"%>
 					</th>
 					<td style="padding:0;">
 						<table class="table table-condensed table-bordered" style="margin:0;">
@@ -22,10 +22,7 @@
 								<% course.videos.each do |video| %>
 								<tr>
 									<td><%= video.title %></td>
-									<td><%= video.introduce %></td>
 									<td><%= video.teacher %></td>
-									<td><%= video.poster %></td>
-									<td><%= video.video %></td>
 									<td><%= link_to "编辑", [:edit, video.course, video], class:"btn btn-warning" %></td>
 									<td><%= link_to "删除", [video.course, video], method: :delete, data: {confirm: "Are you sure?"} , class:"btn btn-danger"%></td>
 								</tr>

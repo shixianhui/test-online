@@ -9,6 +9,7 @@ class AdminController < ApplicationController
 	end
 
 	def test	
+		@videos = Video.all
 	end
 
 	def addcourse
