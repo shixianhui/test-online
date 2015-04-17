@@ -1,0 +1,25 @@
+
+	<p>
+		<strong>Video title:</strong>
+		<%= video.title %>
+	</p>
+	<p>
+		<strong>Video introduce:</strong>
+		<%= video.introduce %>
+	</p>
+	<p>
+		<strong>Video teacher:</strong>
+		<%= video.teacher %>
+	</p>
+	<p>
+		<strong>Video poster:</strong>
+		<%= video.poster %>
+	</p>
+	<p>
+		<strong>Video video:</strong>
+		<%= video.video %>
+	</p>
+	<p>
+		<%= link_to 'Destroy Video', [video.course, video], method: :delete, data: { confirm: 'Are you sure?' } %>|
+		<%= link_to 'Edit', [:edit, video.course, video] %>
+	</p>

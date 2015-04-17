@@ -1,0 +1,29 @@
+<div class="container">
+	<h1>New Course</h1>
+
+	<%= form_for :course, url: courses_path do |f| %>
+	
+	<% if @course.errors.any? %>
+		<div id="error_explanation">
+			<h2><%= pluralize(@course.errors.count, "error") %> prohibited
+				this course from being saved:</h2>
+			<ul>
+				<% @course.errors.full_messages.each do |msg| %>
+				<li><%= msg %></li>
+				<% end %>
+			</ul>
+		</div>
+	<% end %>
+
+	<p>
+		<%= f.label :title %><br>
+		<%= f.text_field :title %>
+	</p>
+
+	<p>
+		<%= f.submit %>
+	</p>
+	<% end %>
+
+	<%= link_to 'back', courses_path %>
+</div>

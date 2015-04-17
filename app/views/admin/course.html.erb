@@ -1,0 +1,28 @@
+<div class="container main-content">
+	<%= render partial:"admin/nav"%>
+	
+	<br>
+	<br>
+	<table class="table table-striped table-bordered">
+		<thead>
+			<tr>
+				<th>#</th>
+				<th>课程名</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody>
+			<% @courses.each do |course|%>
+			<tr>
+				<th><%= course.id %></th>
+				<td><%= course.title %></td>
+				<td style="width:130px;">
+					<%= link_to "编辑", edit_course_path(course), class:"btn btn-warning" %>
+					<%= link_to "删除", course_path(course), method: :delete, data: {confirm: "Are you sure?"}, class:"btn btn-danger" %>
+				</td>
+			</tr>
+			<% end %>
+		</tbody>
+	</table>
+	<%= link_to "新增课程", admin_addcourse_path, class:"btn btn-primary" %>
+</div>

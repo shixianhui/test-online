@@ -1,0 +1,15 @@
+<div class="container">
+	<strong>课程名：</strong><%= @course.title %> <br>
+
+<!-- video list -->
+<!-- 	<h2>Videos:</h2>
+	<%= render @course.videos %> -->
+<!-- video list -->
+
+
+	<h2>添加视频：</h2>
+	<%= render "videos/form" %>
+	<br>
+
+	<%= link_to '返回', admin_video_path %>
+</div>

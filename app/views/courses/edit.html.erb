@@ -1,0 +1,32 @@
+<div class="container main-content">
+	<h1>Edit Course</h1>
+
+	<br>
+	<br>
+
+	<%= form_for :course, url: course_path(@course), method: :patch do |f| %>
+
+	  <% if @course.errors.any? %>
+	  <div id="error_explanation">
+	    <h2><%= pluralize(@course.errors.count, "error") %> prohibited
+	      this course from being saved:</h2>
+	    <ul>
+	    <% @course.errors.full_messages.each do |msg| %>
+	      <li><%= msg %></li>
+	    <% end %>
+	    </ul>
+	  </div>
+	  <% end %>
+
+	  <p>
+	    <%= f.label :title %><br>
+	    <%= f.text_field :title %>
+	  </p>
+	 
+	  <p>
+	    <%= f.submit %>
+	  </p>
+	<% end %>
+
+	<%= link_to '返回', admin_course_path %>
+</div>

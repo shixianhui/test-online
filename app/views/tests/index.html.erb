@@ -1,0 +1,54 @@
+<!--test_background-->
+<div class="test-bg vbox">
+	<div class="flex"></div>
+	<div class="test-title text-center">
+		<h1>网络设备维护基础（一）测试</h1>
+		<h4>单选题（不计时）</h4>
+	</div>	
+	<div class="flex"></div>
+</div>
+<!--test_body-->
+<div class="container video-list">
+	<div class="list-title">
+		<div class="row">
+			<div class="col-xs-6">
+				<span class="rel">题目列表</span>
+			</div>
+			<div class="col-xs-6">
+				<div class="demand">
+					<h4><%= link_to "成绩查询>>", "#"%></h4>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="list-body">
+		<% @tests.each do |test|%>
+			<p class="test-problem">&nbsp;&nbsp;第<%= test.id %>题：<%= test.problem %></p>
+
+				<div class="radio">
+					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+						<%= test.option_a %>
+					</label>
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+						<%= test.option_b %>
+					</label>
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+						<%= test.option_c %>
+					</label>
+					<label>
+						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+						<%= test.option_d %>
+					</label>
+				</div>
+
+			<% end %>
+		<div class="text-center">
+			<!-- <button type="submit" class="btn btn-info btn-sign">提交</button> -->
+			<%= button_to "提交", "#", class: "btn btn-info btn-sign", method: :get %>
+		</div>
+	</div>
+</div>
