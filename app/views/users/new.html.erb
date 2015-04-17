@@ -21,7 +21,7 @@
 						</div>
 						<!--注册-->
 						<div role="tabpanel" class="tab-pane sign-area" id="signup">
-							<%= simple_form_for :user, url: users_path do |user|%>
+							<%= simple_form_for :user, url: signups_path do |user|%>
 								<%= user.input :name, label: '用户名'%>
 								<%= user.input :pwd, label: '密码' %>
 								<%= user.button :submit %>

@@ -1,0 +1,5 @@
+<%= simple_form_for :user, url: signups_path do |user|%>
+<%= user.input :name, label: '用户名'%>
+<%= user.input :pwd, label: '密码' %>
+<%= user.button :submit %>
+<% end %>
