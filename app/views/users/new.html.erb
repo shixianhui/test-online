@@ -16,7 +16,7 @@
 							<%= simple_form_for :user, url: users_path do |signin|%>
 								<%= signin.input :name, label: '用户名'%>
 								<%= signin.input :pwd, label: '密码' %>
-								<%= signin.button :submit %>
+								<%= signin.button :submit ,'登录',class:'forget'%>
 							<% end %>
 						</div>
 						<!--注册-->
@@ -24,7 +24,7 @@
 							<%= simple_form_for :user, url: signups_path do |user|%>
 								<%= user.input :name, label: '用户名'%>
 								<%= user.input :pwd, label: '密码' %>
-								<%= user.button :submit %>
+								<%= user.button :submit, '注册' ,class:'forget'%>
 							<% end %>
 						</div>
 					</div>

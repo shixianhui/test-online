@@ -11,49 +11,24 @@
 			<!-- Wrapper for slides -->
 			<div class="carousel-inner" role="listbox">
 				<div class="item active">
-					<%= image_tag "01index_image.png", alt:"1", class:"photo"%>
+					<%= image_tag "01index.png", alt:"1", class:"photo"%>
+				</div>
+				<div class="item ">
+					<%= image_tag "01index.png", alt:"1", class:"photo"%>
+				</div>
+				<div class="item ">
+					<%= image_tag "01index.png", alt:"1", class:"photo"%>
 				</div>
 			</div>
+			<a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+				<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+				<span class="sr-only">Previous</span>
+			</a>
+			<a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+				<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+				<span class="sr-only">Next</span>
+			</a>
 		</div>		
 	</div>
-	<!--course-->
-	<% @courses.each do |course| %>
-		<div class="video-name">
-			<%= image_tag "01index_titleicon.png"%>
-			<span class="num"><%= course.id %></span>
-			<span><%= course.title %></span>
-
-<!-- destroy show edit -->
-<!-- 			<%= link_to 'Show', course_path(course) %>|
-    			<%= link_to 'Edit', edit_course_path(course) %>|
-    			<%= link_to 'Destroy', course_path(course), method: :delete, data: {confirm: 'Are you sure?' } %> -->
-<!-- destroy show edit -->
-
-			<%= link_to "更多>>", videos_path, class:"more"%>
-		</div>
-
-		<div class="row" style="margin-bottom:20px;">
-			<% course.videos.each do |video|%>
-				<div class="col-md-4 col-xs-6 my-col">
-					<%= link_to [video.course, video] do %>
-						<%=image_tag video.poster,class:"photo"%>
-					<% end %>
-					<div class="video-info">
-						<div class="video-title">
-							<h4 class="head"><%= video.title %></h4>
-							<span class="para"><%= video.introduce %></span>
-						</div>
-						<div class="video-status">
-							<span class="glyphicon glyphicon-time"></span>&nbsp;&nbsp;14天前
-							<span class="status-right">
-								<span class="glyphicon glyphicon-eye-open"></span>&nbsp;&nbsp;1496&nbsp;&nbsp;
-								<span class="glyphicon glyphicon-heart"></span>&nbsp;&nbsp;0
-							</span>
-						</div>
-					</div>
-				</div>
-			<% end %>
-		</div>
-
-	<% end %>
+	
 </div>

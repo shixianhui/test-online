@@ -2,7 +2,7 @@
 <div class="demand-bg vbox">
 	<div class="flex"></div>
 	<div class="test-title text-center">
-		<h1>成绩查询</h1>
+		<h1>试题选择</h1>
 	</div>	
 	<div class="flex"></div>
 </div>
@@ -10,17 +10,19 @@
 
 <div class="container video-list">
 	<!--lessons-->
+	<% @course.each do |course|%>
 	<div class="list-title">
-		<span class="rel">&nbsp;&nbsp;课&nbsp;&nbsp;程&nbsp;&nbsp;</span>
+		<span class="rel">&nbsp;&nbsp;<%= course.title %>&nbsp;&nbsp;</span>
 	</div>
 	<div class="list-body">
-		<% @videos.each do |video|%>
+		<% course.videos.each do |video|%>
 		 	<%= link_to video_tests_path(video) do %>
 				<h4><%= video.title %></h4>
 			<% end %>
 			<hr class="dot">
 		<% end %>
 	</div>
+	<% end %>
 	<div class="text-center">
 		<%= button_to "查 询", "#", class: "btn btn-info btn-course", method: :get %>
 	</div>

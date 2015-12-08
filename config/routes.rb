@@ -1,9 +1,12 @@
 Rails.application.routes.draw do
 
+  get 'gread/index'
+
   get 'admin/course'
   get 'admin/video'
   get 'admin/test'
   get 'admin/addcourse'
+  get 'admin/user'
 
   resources :courses do
     resources :videos
@@ -15,8 +18,10 @@ Rails.application.routes.draw do
 
   resources :users
   resources :signups
+  resources :logups
 
-root 'users#new'
+
+root 'courses#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

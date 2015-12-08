@@ -16,5 +16,9 @@ class AdminController < ApplicationController
 		@course = Course.new
 	end
 
+	def user
+		@user = User.all
+	end
+
 end
 	

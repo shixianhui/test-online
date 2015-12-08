@@ -7,6 +7,8 @@
 			<tr>
 				<th>课程名</th>
 				<th>类目</th>
+				
+
 			</tr>
 		</thead>
 		<tbody>
@@ -24,7 +26,8 @@
 									<td><%= video.title %></td>
 									<td><%= video.teacher %></td>
 									<td><%= link_to "编辑", [:edit, video.course, video], class:"btn btn-warning" %></td>
-									<td><%= link_to "删除", [video.course, video], method: :delete, data: {confirm: "Are you sure?"} , class:"btn btn-danger"%></td>
+									<td><%= link_to "删除", [video.course, video], method: :delete, data: {confirm: "Are you sure?"} , class:"btn btn-danger"%>
+									</td>
 								</tr>
 								<% end %>
 							</tbody>

@@ -24,38 +24,40 @@
 	<div class="list-body">
 		<% @tests.each do |test|%>
 			<p class="test-problem">&nbsp;&nbsp;第<%= test.id %>题：<%= test.problem %></p>
+			<form name="form1" > 
 				<div class="radio">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-						<%= test.option_a %>
+						<input type="radio" name="radiobutton" value="radiobutton" >
+						A.<%= test.option_a %>
 					</label>
 				</div>
 				<div class="radio">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-						<%= test.option_b %>
+						<input type="radio" name="radiobutton" value="radiobutton" >
+						B.<%= test.option_b %>
 					</label>
 				</div>
 				<div class="radio">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-						<%= test.option_c %>
+						<input type="radio" name="radiobutton" value="radiobutton" >
+						C.<%= test.option_c %>
 					</label>
 				</div>
 				<div class="radio">
 					&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 					<label>
-						<input type="radio" name="optionsRadios" id="optionsRadios1" value="option1">
-						<%= test.option_d %>
+						<input type="radio" name="radiobutton" value="radiobutton" >
+						D.<%= test.option_d %>
 					</label>
 				</div>
+				</form>
 			<% end %>
 		<div class="text-center">
 			<!-- <button type="submit" class="btn btn-info btn-sign">提交</button> -->
-			<%= button_to "提交", "#", class: "btn btn-info btn-sign", method: :get %>
+			<%= button_to "提交", gread_index_path, class: "btn btn-info btn-sign", method: :get %>
 		</div>
 	</div>
 </div>
